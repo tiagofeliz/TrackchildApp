@@ -1,0 +1,90 @@
+//        beaconManager.setMonitorNotifier(new MonitorNotifier() {
+//            @Override
+//            public void didEnterRegion(Region region) {
+//                try {
+//
+//                    logToDisplay("Entrou numa região: "+region.getId1().toString(), "Entrada");
+//                    postNotification("Entrou numa região");
+//                    beaconManager.startRangingBeaconsInRegion(region);
+//                } catch (RemoteException e) {
+//                    logToDisplay(e.getMessage(), "Erro");
+//                }
+//            }
+//
+//            @Override
+//            public void didExitRegion(Region region) {
+//                try {
+//                    flagRegion = 0;
+//                    logToDisplay("Saiu de uma região: "+region.getId1().toString(), "Saida");
+//                    postNotification("Saiu de uma região");
+//                    beaconManager.stopRangingBeaconsInRegion(region);
+//                } catch (RemoteException e) {
+//                    logToDisplay(e.getMessage(), "Erro");
+//                }
+//            }
+//
+//            @Override
+//            public void didDetermineStateForRegion(int i, Region region) {
+//                if(i==0) {
+//                    logToDisplay("Status de monitoramento: \n"+region.getId1().toString(), "Status: OUTSIDE");
+//                }else{
+//                    logToDisplay("Status de monitoramento: \n"+region.getId1().toString(), "Status: INSIDE");
+//                }
+//            }
+//        });
+
+//        try {
+//            beaconManager.addMonitorNotifier(new MonitorNotifier() {
+//                @Override
+//                public void didEnterRegion(Region region) {
+//                    beaconManager.setRangeNotifier(new RangeNotifier() {
+//                        @Override
+//                        public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
+//                            for (Beacon beacon : beacons) {
+//                                try {
+//                                    logToDisplay(beacon.getId1().toString(), "Entrada");
+//                                    beaconManager.startRangingBeaconsInRegion(region);
+//                                } catch (RemoteException e) {
+//                                    logToDisplay(e.getMessage(), "Erro");
+//                                }
+//                            }
+//                        }
+//                    });
+//                }
+//
+//                @Override
+//                public void didExitRegion(Region region) {
+//                    beaconManager.setRangeNotifier(new RangeNotifier() {
+//                        @Override
+//                        public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
+//                            for (Beacon beacon : beacons) {
+//                                try {
+//                                    logToDisplay(beacon.getId1().toString(), "Saida");
+//                                    beaconManager.stopRangingBeaconsInRegion(region);
+//                                } catch (RemoteException e) {
+//                                    logToDisplay(e.getMessage(), "Erro");
+//                                }
+//                            }
+//                        }
+//                    });
+//                }
+//
+//                @Override
+//                public void didDetermineStateForRegion(final int state, Region region) {
+//                    beaconManager.setRangeNotifier(new RangeNotifier() {
+//                        @Override
+//                        public void didRangeBeaconsInRegion(Collection<Beacon> beacons, Region region) {
+//
+//                            for (Beacon beacon : beacons) {
+//                                logToDisplay(beacon.getId1().toString(), "Status: " + state);
+//                            }
+//
+//                        }
+//                    });
+//                }
+//
+//            });
+//            beaconManager.startMonitoringBeaconsInRegion(new Region("myMonitoringUniqueId", Identifier.parse(uuidValue), null, null));
+//        } catch (RemoteException e) {
+//            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+//        }

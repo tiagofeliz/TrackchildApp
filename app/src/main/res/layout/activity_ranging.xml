@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_bridge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.example.instanceofworries.RangingActivity"
+    android:weightSum="1">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Monitorar"
+        android:background="@drawable/button_circle"
+        android:textColor="#fff"
+        android:textAlignment="textStart"
+        android:paddingLeft="30dp"
+        android:onClick="iniciarMonitoramento"/>
+
+    <ListView
+        android:id="@+id/listAreasBeacons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_monitoring"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.example.instanceofworries.MonitoringActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar para a tela anterior"
+        android:background="@drawable/button_circle"
+        android:textColor="#fff"
+        android:textAlignment="textStart"
+        android:paddingLeft="30dp"
+        android:onClick="stopMonitoring"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notificações de entrada e saída são listadas abaixo"
+        android:textSize="13sp"
+        android:textAlignment="textStart"
+        android:background="#dddddd"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:textColor="#666"
+        android:onClick="teste"/>
+
+    <ListView
+        android:id="@+id/listAreasBeacons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+    </ListView>
+
+</LinearLayout>
